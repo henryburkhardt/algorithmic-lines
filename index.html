@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./p5.js"></script>
+    <script src="./sketch.js"></script>
+    <script src="./dot.js"></script>
+    <script src="./drawing.js"></script>
+
+    <script>
+    
+    </script>
+
+    <style>
+      
+    </style>
+    <title>Dot Grid</title>
+</head>
+<body>
+    <div class="buttonCont">
+        <input class="menuButton menuButtonLight" type="button" value="Grid" onclick="setTarget(1)">
+        <input class="menuButton menuButtonLight" type="button" value="Quad" onclick="setTarget(2)">
+        <input class="menuButton menuButtonLight" type="button" value="Chaos" onclick="setTarget(3)">
+        <input class="menuButton menuButtonLight" type="button" value="One Icon" onclick="setTarget(4)">
+        <input class="menuButton menuButtonLight" type="button" value="Dark Mode" id="darkModeButton" onclick="setDark()">
+        <input class="menuButton menuButtonLight" type="button" value="🏠" onclick="setTarget(0)">
+
+    </div>
+
+    <div id="welcome">
+    
+        <h1>Algorithmic Line Drawing</h1>
+        <h5>Select a mode to get started.</h5>
+    </div>
+
+
+    <div id="canvas"></div>
+
+</body>
+</html>
