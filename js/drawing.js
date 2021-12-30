@@ -7,6 +7,7 @@ class Drawing{
         this.name = str("("+ _name + ")");
         this.showText = _showText;
         this.darkMode = _darkMode;
+        this.seedArr = [];
 
         if(this.darkMode){
             this.fg = 255; 
@@ -38,10 +39,14 @@ class Drawing{
         strokeWeight(1);
     
         for(let dot of dots){
-            var to = dots[Math.floor(Math.random()*dots.length)]
+            let index = Math.floor(Math.random()*dots.length)
+            let to = dots[index]
             if (to != dot){
                 line(dot.position.x, dot.position.y, to.position.x, to.position.y);
-            } 
+            }
+
+            dot.connection = index;
+            this.seedArr.push((dot.connection >>> 0).toString(2));
         }
 
         if(this.showText){
@@ -54,5 +59,6 @@ class Drawing{
             text(this.name, (this.maxScale*this.gridSize.x)/2, this.maxScale*this.gridSize.y);
         }
         translate(-this.position.x, -this.position.y);
+
     }
 }

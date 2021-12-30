@@ -1,6 +1,8 @@
 var dark = false;
 var bg;
+var fg;
 var target = 0;
+var seedVis = false;
 
 function dowload(){
     if(target != 0){
@@ -8,8 +10,24 @@ function dowload(){
     }
 }
 
+function showSeed(){
+    seedVis = !seedVis;
+    if(target == 4){
+        setTarget(target);   
+    } 
+}
+
+function seedToDrawing(seed){
+    for (let i = 0; i < seed.length; i++) {
+        seed[i] = parseInt(seed[i],2);
+    }
+    return(seed)
+}
+
 function setDark(){
     dark = !dark;
+    if(dark){bg = 0;}else{bg = 255;}
+    fg = 255 - bg;
     setTarget(target);
 
     if(dark){
@@ -45,7 +63,6 @@ function setTarget(val){
     
     target = val;
 
-    if(dark){var bg = 0;}else{var bg = 255;}
     if(target==0){
         $("#canvas").hide(0);
         $("#welcome").hide(0).fadeIn(500);
@@ -131,6 +148,15 @@ function oneIcon(){
     d.show();
     translate(-((windowWidth/2)-(size)),-((windowHeight/2)-(size)));
     translate(size, size);
+    if(seedVis){
+        strokeWeight(0);
+        fill(fg);
+        textAlign(CENTER);
+        textSize(15);
+        textStyle(NORMAL);
+        textFont('Roboto');
+        text(d.seedArr.toString(), width/2,100);
+    }
 }
 
 function setup(){
