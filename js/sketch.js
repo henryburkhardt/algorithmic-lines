@@ -173,7 +173,9 @@ function mouseWheel(){
 }
 
 function mouseClicked(){
-    setTarget(target);
+    if(target != 0){
+        setTarget(target);
+    }
 }
 
 function keyPressed() {
