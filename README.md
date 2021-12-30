@@ -18,4 +18,4 @@ The website also includes a *save* option for users to download the unique line 
 
 Each drawing is most likely something that will only ever be seen once.
 
-This project is currently being hosted at [henryburkhardt.github.io/algorithmic-lines](henryburkhardt.github.io/algorithmic-lines)
+This project is currently being hosted at [henryburkhardt.github.io/algorithmic-lines](https://henryburkhardt.github.io/algorithmic-lines/)
