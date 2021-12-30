@@ -1,7 +1,7 @@
 # algorithmic-lines
 Algorithmically generated line art, with a nice UI built with [p5.js](https://p5js.org/).
 
-This project uses randomness to create line drawings. Each drawing starts by creating a grid points. Next, the points may be randomly scaled randomly in either direction. Lastly, every single point in a drawing is connected a random to exactly one other point in the grid.
+This project uses randomness to create line drawings. Each drawing starts by creating a grid of points. Next, the points may be randomly scaled randomly in either direction. Lastly, every single point in a drawing is connected at random to exactly one other point in the grid.
 
 <p align="center">
     <img src="./img/2.jpg" width=150>
