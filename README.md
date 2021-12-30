@@ -8,7 +8,6 @@ This project uses randomness to create line drawings. Each drawing starts by cre
     <img src="./img/3.jpg" width=150>
     <br>
     (<i>a few examples</i>)
-    
 </p>
 
 

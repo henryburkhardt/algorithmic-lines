@@ -6,6 +6,7 @@ var seedVis = false;
 
 function dowload(){
     if(target != 0){
+        if(confirm("Would you like to dowload the current drawing as an image file?"))
         saveCanvas(canvas, "alogithmic_lines.jpg");
     }
 }
