@@ -172,6 +172,10 @@ function mouseWheel(){
     }
 }
 
+function mouseClicked(){
+    setTarget(target);
+}
+
 function keyPressed() {
     if (keyCode === ENTER && target != 0) {
         setTarget(target);
