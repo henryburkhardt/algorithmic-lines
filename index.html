@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./p5.js"></script>
-    <script src="./sketch.js"></script>
-    <script src="./dot.js"></script>
-    <script src="./drawing.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="./js/dot.js"></script>
+    <script src="./js/drawing.js"></script>
+    <script src="./js/sketch.js"></script>
     <title>Dot Grid</title>
 </head>
 <body>
@@ -26,9 +26,10 @@
 
     <div id="welcome">
         <h1>Algorithmic Line Drawing</h1>
-        <p>Select a mode to get started. Each mode uses different paramaters to generate random line art, connecting invisible points on a grid.</p>
-        <p>In <i>Grid</i> there are 10,078,751,602,022,313,874,633,200 possible line combinatnions that can be shown. In <i>One</i>, you'd have to stay on the website generating drawings for 79,898,779,189,040,400 (79 qaudrillion years) before you would see the same drawing twice. The universe itself is only 13,800,000,000 (13.8 billion) years old. In <i>Chaos</i> and <i>Qaud</i> each drawing is more rare by many orders of magnitude.</p>
-        <p>Each drawing is likley something that will only <i>ever</i> be seen once.</p>
+        <p>Select a mode to get started. Each mode uses different parameters to generate random line art, connecting invisible points on a grid.</p>
+        <p>In <i>Grid</i> there are 10,078,751,602,022,313,874,633,200 possible line combinations that can be shown. In <i>One</i>, you'd have to stay on the website generating drawings for 79,898,779,189,040,400 (79 quadrillion years) before you would see the same drawing twice. The universe is only 13.8 billion years old. In <i>Chaos</i> and <i>Quad</i> each drawing is more rare by many orders of magnitude.</p>
+        <p>Each drawing is likely something that will only ever be seen once.</p>
+        <p id="bioLink">Created by: <strong> <a href="https://github.com/henryburkhardt" target="_blank">Henry Burkhardt</a></strong></p>
     </div>
 
     <div id="canvas"></div>
