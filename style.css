@@ -1,9 +1,8 @@
 html, body {
     height: 100%;
-}
-body {
     margin: 0;
 }
+
 #canvas {
     display: flex;
     justify-content: center;
@@ -18,8 +17,6 @@ body {
     align-items: left; 
     display: inline-block;
     font-size: 5vw;
-    
-  
 }
 
 h1{
@@ -27,16 +24,18 @@ h1{
     margin-bottom: 0px;
 }
 
-h5{
+p{
     font-weight: 100;
+    font-size: 70%;
 }
 .buttonCont {
     align-items:center;
     display: block;
-    position: absolute;
+    position:absolute;
     padding-top: 4px;
     padding-left: 4px;
-} 
+    
+}
 
 .menuButton{
     display:inline-block;
@@ -64,7 +63,7 @@ h5{
 .menuButtonDark:hover{
     background: white; 
     color: black;
-    border-color: black;
+    border-color: white;
 }
 
 .menuButtonLight{
@@ -76,5 +75,5 @@ h5{
 .menuButtonLight:hover{
     background: black;
     color: white;
-    border-color:white;
+    border-color:black;
 }

@@ -53,7 +53,6 @@ class Drawing{
             textFont('Georgia');
             text(this.name, (this.maxScale*this.gridSize.x)/2, this.maxScale*this.gridSize.y);
         }
-
         translate(-this.position.x, -this.position.y);
     }
 }

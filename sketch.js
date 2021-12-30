@@ -1,14 +1,17 @@
+var dark = false;
+var bg;
+var target = 0;
+
 $(document).ready(function(){
     $("#canvas").hide(0);
     $("#welcome").hide(0).fadeIn(1000);
 });
 
-
-// const w = windowWidth;
-// const h = windowHeight;
-var dark = false;
-var bg;
-var target = 0;
+function dowload(){
+    if(target != 0){
+        saveCanvas(canvas, "alogithmic_lines.jpg");
+    }
+}
 
 function setDark(){
     dark = !dark;
@@ -16,8 +19,9 @@ function setDark(){
 
     if(dark){
         $("#welcome").css("color", "white");
-        document.body.style.backgroundColor = "black";
-        document.getElementById("darkModeButton").value = "Light Mode";
+        $("body").css("background-color","black");
+        $("#darkModeButton").val("💡");
+
         let buttons = document.getElementsByClassName('menuButton');
         for(let b of buttons){
             b.classList.add("menuButtonDark");
@@ -25,8 +29,9 @@ function setDark(){
          }
     }else{
         $("#welcome").css("color", "black");
-        document.body.style.backgroundColor = "white";
-        document.getElementById("darkModeButton").value = "Dark Mode";
+        $("body").css("background-color","white");
+        $("#darkModeButton").val("🌑");
+        
         let buttons = document.getElementsByClassName('menuButton');
         for(let b of buttons){
             b.classList.remove("menuButtonDark");
@@ -36,37 +41,38 @@ function setDark(){
 }
 
 function setTarget(val){
-    clear();
-    if(target != 0){
-        $("#welcome").hide(0).fadeOut(1000);
-        $("#canvas").fadeIn(1000);
 
+    function reset(){
+        clear();
+        $("#canvas").show();
+        $("#welcome").hide(0);
     }
     
-
     target = val;
 
     if(dark){var bg = 0;}else{var bg = 255;}
     if(target==0){
         $("#canvas").hide(0);
-        $("#welcome").hide(0).fadeIn(1000);
+        $("#welcome").hide(0).fadeIn(500);
     }
     else if(target==1){
+        reset();
         background(bg);
         bigGrid();
     }else if(target == 2){
+        reset();
         background(bg);
         qaud();
     }else if(target == 3){
+        reset();
         background(bg);
         singleDrawing();
     }else if(target == 4){
+        reset();
         background(bg);
         oneIcon();
     }
 }
-
-
 
 function bigGrid(){
     pixelDensity(3.0);
@@ -75,7 +81,6 @@ function bigGrid(){
     strokeWeight(5)
     let x_size = Math.floor(windowWidth/50);
     let y_size = Math.floor(windowHeight/50);
-    console.log(x_size, y_size);
     let count = 1;
     for (let x = 0; x < x_size; x++) {
         for (let y = 0; y < y_size; y++) {
@@ -94,15 +99,11 @@ function qaud(){
     let x_count = Math.floor(windowWidth/(14*10));
     let y_count = Math.floor(windowHeight/(14*10));
     
-    if(x_count>4 && y_count>4){
-        x_count = 4; 
-        y_count = 4;
-    }
+    if(x_count>4){x_count = 4;}
+    if(y_count>4){y_count = 4;}
 
     let x_cent = (x_count*(14*10))/2;
-
-   
-    translate(windowWidth/2-x_cent,100);
+    translate(windowWidth/2-x_cent,50);
 
     let count = 1;
     for (let y = 0; y < y_count; y++) {
@@ -112,19 +113,17 @@ function qaud(){
             d.show();  
             count++;
         }   
-    }
-    
-    translate(-(windowWidth/2-x_cent),-100);
+    } 
+    translate(-(windowWidth/2-x_cent),-50);
 }
 
 function singleDrawing(){
     let x_pos = (windowWidth/2);
-    console.log(x_pos);
     strokeWeight(10);
-    translate(x_pos-((20*30)/2),100);
+    translate(x_pos-((20*30)/2),50);
     let d = new Drawing(0, 0, 20, 30, 20,20, 1, true, dark);
     d.show();
-    translate(-(x_pos-((20*30)/2)),-100);
+    translate(-(x_pos-((20*30)/2)),-50);
 }
 
 function oneIcon(){
@@ -133,12 +132,8 @@ function oneIcon(){
     translate((windowWidth/2)-(size),(windowHeight/2)-(size));
     let d = new Drawing(0,0,size,size,4,4,1,false,dark);
     d.show();
-
     translate(-((windowWidth/2)-(size)),-((windowHeight/2)-(size)));
     translate(size, size);
-
-    
-
 }
 
 function setup(){
@@ -152,5 +147,9 @@ function mouseWheel(){
         if(dark){var bg = 0;}else{var bg = 255;}
         background(bg);
         bigGrid();
+    } else if(target==4){
+        if(dark){var bg = 0;}else{var bg = 255;}
+        background(bg);
+        oneIcon();
     }
 }
